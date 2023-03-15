@@ -126,7 +126,8 @@ client.on(`interactionCreate`, (interaction) => {
             answer = (!answer) ? `couldn't reach chatGPT for an answer` : answer
             const embed = new discord.EmbedBuilder()
                 .setColor("#13ff13")
-                .addFields({name: `${question}`,value: `${answer}`})
+                .setTitle(`${question}`)
+                .setDescription(`${answer}`)
             interaction.editReply({content: ``,
                 embeds: [embed]
             })
